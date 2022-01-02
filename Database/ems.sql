@@ -42,6 +42,20 @@ CREATE TABLE `admin` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `login`
+--
+
+CREATE TABLE `login_tbl` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `usertype` int(11) NOT NULL,
+  PRIMARY KEY(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `attendance`
 --
 
@@ -58,11 +72,10 @@ CREATE TABLE `attendance` (
 -- Table structure for table `department`
 --
 
-CREATE TABLE `department` (
-  `Id` int(11) NOT NULL,
-  `position` varchar(255) NOT NULL,
-  `jobDescription` text NOT NULL,
-  `managerName` varchar(255) NOT NULL
+CREATE TABLE `department_tbl` (
+  `id` int(11) NOT NULL,
+  `department_name` varchar(255) NOT NULL,
+  `added_on` DATE NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
