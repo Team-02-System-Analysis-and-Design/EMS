@@ -63,3 +63,11 @@ $route['manage-department'] = 'department/manage_department';
 $route['edit-department/(:num)'] = 'department/edit/$1';
 $route['update-department'] = 'department/update';
 $route['delete-department/(:num)'] = 'department/delete/$1';
+
+//employee routes
+$route['add-employee'] = 'employee';
+$route['manage-employee'] = 'employee/manage';
+$route['insert-employee'] = 'employee/insert';
+$route['delete-employee/(:num)'] = 'employee/delete/$1';
+$route['edit-employee/(:num)'] = 'employee/edit/$1';
+$route['update-employee'] = 'employee/update';
