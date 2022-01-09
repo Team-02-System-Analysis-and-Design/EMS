@@ -19,7 +19,7 @@ class Home extends CI_Controller {
             if($this->session->userdata('usertype')==1)
             {
                 $data['department']=$this->Department_model->select_departments();
-                
+                $data['employee']=$this->Employee_model->select_employee();
                 $this->load->view('admin/header');
                 $this->load->view('admin/footer');
             }
