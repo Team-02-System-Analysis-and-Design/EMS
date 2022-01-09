@@ -3,11 +3,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Employees
+        Employee
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Employees</a></li>
+        <li><a href="#">Employee Management</a></li>
         <li class="active">Manage Employees</li>
       </ol>
     </section>
@@ -41,36 +41,58 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Employee Name</th>
-                  <th>Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php 
-                  if(isset($content)):
-                  $i=1; 
-                  foreach($content as $cnt): 
-                ?>
-                    <tr>
-                      <td><?php echo $i; ?></td>
-                      <td><?php echo $cnt['employee_name']; ?></td>
-                      <td>
-                        <a href="<?php echo base_url(); ?>edit-employee/<?php echo $cnt['id']; ?>" class="btn btn-success">Edit</a>
-                        <a href="<?php echo base_url(); ?>delete-employee/<?php echo $cnt['id']; ?>" class="btn btn-danger">Delete</a>
-                      </td>
-                    </tr>
+              <div class="table-responsive">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Gender</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                    <th>Date of Birth</th>
+                    <th>Joined On</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Country</th>
+                    <th>Actions</th>
+                  </tr>
+                  </thead>
+                  <tbody>
                   <?php 
-                    $i++;
-                    endforeach;
-                    endif; 
+                    if(isset($content)):
+                    $i=1; 
+                    foreach($content as $cnt): 
                   ?>
-                
-                </tbody>
-              </table>
+                      <tr>
+                        <td><?php echo $i; ?></td>
+                        <td><?php echo $cnt['staff_name']; ?></td>
+                        <td><?php echo $cnt['department_name']; ?></td>
+                        <td><?php echo $cnt['gender']; ?></td>
+                        <td><?php echo $cnt['mobile']; ?></td>
+                        <td><?php echo $cnt['email']; ?></td>
+                        <td><?php echo date('d-m-Y', strtotime($cnt['dob'])); ?></td>
+                        <td><?php echo date('d-m-Y', strtotime($cnt['doj'])); ?></td>
+                        <td><?php echo $cnt['address']; ?></td>
+                        <td><?php echo $cnt['city']; ?></td>
+                        <td><?php echo $cnt['state']; ?></td>
+                        <td><?php echo $cnt['country']; ?></td>
+                        <td>
+                          <a href="<?php echo base_url(); ?>edit-employee/<?php echo $cnt['id']; ?>" class="btn btn-success">Edit</a>
+                          <a href="<?php echo base_url(); ?>delete-employee/<?php echo $cnt['id']; ?>" class="btn btn-danger">Delete</a>
+                        </td>
+                      </tr>
+                    <?php 
+                      $i++;
+                      endforeach;
+                      endif; 
+                    ?>
+                  
+                  </tbody>
+                </table>
+              </div>
             </div>
             <!-- /.box-body -->
           </div>
