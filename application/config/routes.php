@@ -71,3 +71,11 @@ $route['insert-employee'] = 'employee/insert';
 $route['delete-employee/(:num)'] = 'employee/delete/$1';
 $route['edit-employee/(:num)'] = 'employee/edit/$1';
 $route['update-employee'] = 'employee/update';
+
+$route['apply-leave'] = 'leave';
+$route['approve-leave'] = 'leave/approve';
+$route['leave-history'] = 'leave/manage';
+$route['leave-approved/(:num)'] = 'leave/insert_approve/$1';
+$route['leave-rejected/(:num)'] = 'leave/insert_reject/$1';
+$route['view-leave'] = 'leave/view';
+$route['salaryinvoice/(:num)'] = 'salary/invoicestaff/$1';
