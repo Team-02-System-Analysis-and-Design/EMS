@@ -20,12 +20,15 @@ class Home extends CI_Controller {
             {
                 $data['department']=$this->Department_model->select_departments();
                 $data['employee']=$this->Employee_model->select_employee();
+                $data['leave']=$this->Leave_model->select_leave_forApprove();
                 $this->load->view('admin/header');
                 $this->load->view('admin/footer');
             }
             else{
                 $staff=$this->session->userdata('userid');
-
+                $data['leave']=$this->Leave_model->select_leave_byStaffID($staff);
+                $this->load->view('employee/header');
+                $this->load->view('employee/footer');
             }
             
         }
